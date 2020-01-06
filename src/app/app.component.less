@@ -1,0 +1,50 @@
+@import '../assets/styles/custom';
+#root{
+  .layout{
+    .header{
+      height: @nav-height;
+      width: 100%;
+      .navs{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        #logo{
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background: @dark;
+          height: @nav-height;
+          width: @nav-height*1.5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .routes{
+          display: flex;
+          align-items: center;
+          font-size: 20px;
+          a{
+            margin-right: 70px;
+            color: @dark;
+            &:hover{
+              text-decoration: overline;
+            }
+          }
+        }
+        #release{
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          background: @dark;
+          height: @nav-height;
+          width: @nav-height;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+  }
+}
