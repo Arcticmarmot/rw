@@ -1,0 +1,46 @@
+@import "../../../assets/styles/custom";
+#login{
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title{
+    color: @dark;
+    margin-top: 50px;
+    font-size: 40px;
+  }
+  .form-wrap{
+    height: 600px;
+    width: 600px;
+    .login-form{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      mat-form-field{
+        margin-top: 50px;
+        margin-bottom: 80px;
+        width: 100%;
+        font-size: 25px;
+      }
+      button{
+        color: @shallow-blue;
+        margin-top: 50px;
+        font-size: 30px;
+        height: 80px;
+        width: 100%;
+      }
+      .info{
+        margin-top: 100px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        .cookie-info{
+          font-size: 15px;
+          color: @error-color;
+        }
+      }
+    }
+  }
+}

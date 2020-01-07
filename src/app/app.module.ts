@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {PagesModule} from './pages/pages.module';
+import {ServicesModule} from './services/services.module';
 
 registerLocaleData(zh);
 
@@ -19,12 +20,13 @@ registerLocaleData(zh);
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ServicesModule,
     PagesModule,
     AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
