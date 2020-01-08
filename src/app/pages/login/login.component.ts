@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {PASSWORDPATTERN} from '../../utils/constant';
 import {LoginService} from '../../services/login/login.service';
+import {AuthService} from '../../services/login/auth.service';
+import {Router} from '@angular/router';
+import {UpdateAuthService} from '../../services/login/update-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +18,10 @@ export class LoginComponent implements OnInit {
   });
   isCookieEnable: boolean;
   constructor(private fb: FormBuilder,
-              private loginService: LoginService) { }
+              private loginService: LoginService,
+              private route: Router,
+              private updateAuthService: UpdateAuthService
+              ) { }
 
   ngOnInit() {
     this.isCookieEnable = navigator.cookieEnabled;
@@ -26,6 +32,8 @@ export class LoginComponent implements OnInit {
       password: this.loginFormData.controls.password.value,
     }).subscribe(
       res => {
+        this.updateAuthService.update();
+        this.route.navigate(['/home']);
       },
       err => {
         if (err.error.tip === 'Account or password is wrong') {

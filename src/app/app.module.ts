@@ -11,6 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {PagesModule} from './pages/pages.module';
 import {ServicesModule} from './services/services.module';
+import {MatButtonModule, MatMenuModule} from '@angular/material';
 
 registerLocaleData(zh);
 
@@ -27,6 +28,8 @@ registerLocaleData(zh);
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
+    MatMenuModule,
+    MatButtonModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

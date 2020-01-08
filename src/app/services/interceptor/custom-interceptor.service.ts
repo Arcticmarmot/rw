@@ -18,10 +18,11 @@ export class CustomInterceptorService implements HttpInterceptor {
     return next.handle(req).pipe(
       mergeMap((res) => {
         if (res instanceof HttpResponse) {
-          this.message.success(res.body.tip);
-          return of(res);
+          if (res.body.tip) {
+            this.message.success(res.body.tip);
+          }
         }
-        return of();
+        return of(res);
       }),
       catchError(err => this.handleError(err))
     );
