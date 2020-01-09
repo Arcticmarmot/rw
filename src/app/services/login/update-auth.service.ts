@@ -16,6 +16,6 @@ export class UpdateAuthService {
     this.reLoginInformation.next('reLogin');
   }
   update() {
-    this.authUpdate.next('authUpdate');
+    this.authUpdate.next();
   }
 }

@@ -1,0 +1,14 @@
+<div id="announcement">
+  <div class="title">
+    <strong>公告</strong>
+  </div>
+  <div class="list">
+    <mat-list>
+      <div class="item" *ngFor="let sa of shortAnno">
+        <mat-list-item ><a>{{sa.title}}</a></mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
+  </div>
+</div>
+<app-footer></app-footer>

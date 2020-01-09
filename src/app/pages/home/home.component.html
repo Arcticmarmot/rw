@@ -1,9 +1,23 @@
 <div id="home">
   <div class="left">
+    <div class="search-wrap">
+      <mat-form-field>
+        <input matInput placeholder="Search">
+      </mat-form-field>
+      <i nz-icon nzType="search" nzTheme="outline"
+         style="
+         font-size: 30px;
+         margin-top: 50px;
+         margin-left: 20px;
+         cursor: pointer;
+         height: 50px;
+      "></i>
+    </div>
+
   </div>
   <div class="right">
     <div class="image-board">
-      <nz-carousel nzAutoPlay>
+      <nz-carousel nzAutoPlay nzDotPosition="right">
         <div nz-carousel-content *ngFor="let banner of banners">
           <img src="../../../assets/imgs/{{banner.name}}.jpg">
         </div>
@@ -31,5 +45,4 @@
   <div class="right">
     <div class="margin"></div>
   </div>
-
 </div>

@@ -1,4 +1,4 @@
-<div id="root">
+<div id="root" matRipple matRippleRadius="50">
   <div class="layout">
     <div class="header">
       <div class="navs">
@@ -6,14 +6,16 @@
         </div>
         <div class="routes">
           <a [routerLink]="['/home']"><strong>首页</strong></a>
-          <a><strong>公告</strong></a>
-          <a><strong>动态</strong></a>
+          <a [routerLink]="['/announce',0]"><strong>公告</strong></a>
+          <a><strong>社区</strong></a>
           <a><strong>借阅</strong></a>
           <a [routerLink]="['/login']" *ngIf="!isLogin"><strong>登录</strong></a>
           <mat-menu #personalMenu="matMenu">
             <button mat-menu-item><strong>个人信息</strong></button>
             <button mat-menu-item><strong>我的动态</strong></button>
             <button mat-menu-item><strong>我的借阅</strong></button>
+            <button mat-menu-item *ngIf="role&&role!=='user'"><strong>用户管理</strong></button>
+            <button mat-menu-item *ngIf="role&&role!=='user'"><strong>公告管理</strong></button>
             <button mat-menu-item (click)="logout()"><strong>注销</strong></button>
           </mat-menu>
         </div>
@@ -22,6 +24,7 @@
         </div>
       </div>
     </div>
+    <mat-divider></mat-divider>
     <div class="content">
       <router-outlet></router-outlet>
     </div>

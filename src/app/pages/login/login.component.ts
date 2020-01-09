@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {PASSWORDPATTERN} from '../../utils/constant';
 import {LoginService} from '../../services/login/login.service';
-import {AuthService} from '../../services/login/auth.service';
 import {Router} from '@angular/router';
 import {UpdateAuthService} from '../../services/login/update-auth.service';
 
@@ -32,6 +31,7 @@ export class LoginComponent implements OnInit {
       password: this.loginFormData.controls.password.value,
     }).subscribe(
       res => {
+        console.log(res);
         this.updateAuthService.update();
         this.route.navigate(['/home']);
       },

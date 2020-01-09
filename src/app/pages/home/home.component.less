@@ -5,6 +5,20 @@
   .left{
     width: @left-percent;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    .search-wrap{
+      height: 100%;
+      width: 100%;
+      padding-top: 300px;
+      display: flex;
+      justify-content: center;
+      mat-form-field{
+        width: 60%;
+        font-size: 30px;
+      }
+    }
+
   }
   .right{
     width: @right-percent;

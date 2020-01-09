@@ -11,9 +11,22 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {PagesModule} from './pages/pages.module';
 import {ServicesModule} from './services/services.module';
-import {MatButtonModule, MatMenuModule} from '@angular/material';
+import {
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+  MatButtonModule,
+  MatDividerModule,
+  MatMenuModule,
+  MatRippleModule,
+  RippleGlobalOptions
+} from '@angular/material';
 
 registerLocaleData(zh);
+const globalRippleConfig: RippleGlobalOptions = {
+  animation: {
+    enterDuration: 80,
+    exitDuration: 8
+  }
+};
 
 @NgModule({
   declarations: [
@@ -30,8 +43,13 @@ registerLocaleData(zh);
     HttpClientModule,
     MatMenuModule,
     MatButtonModule,
+    MatRippleModule,
+    MatDividerModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [{
+    provide: NZ_I18N, useValue: zh_CN },
+    {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

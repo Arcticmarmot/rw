@@ -12,6 +12,7 @@ import {MatMenuTrigger} from '@angular/material';
 })
 export class AppComponent implements OnInit {
   isLogin = false;
+  role: 'user'|'admin'|'root';
   @ViewChild(MatMenuTrigger, {static: false}) trigger: MatMenuTrigger;
   constructor(private authService: AuthService,
               private logoutService: LogoutService,
@@ -41,8 +42,9 @@ export class AppComponent implements OnInit {
   }
   updateAuth() {
     this.authService.authorize().subscribe(
-      (res: {auth: boolean}) => {
+      (res: {auth: boolean, role: 'user'|'admin'|'root'}) => {
         this.isLogin = res.auth;
+        this.role = res.role;
       }
     );
   }
