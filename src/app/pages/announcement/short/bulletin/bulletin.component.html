@@ -1,0 +1,8 @@
+<div id="bulletin">
+  <mat-list>
+    <div class="item" *ngFor="let sa of shortAnnos">
+      <mat-list-item><a [routerLink]="['/anno-detail',sa._id]">{{sa.title}}</a></mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</div>

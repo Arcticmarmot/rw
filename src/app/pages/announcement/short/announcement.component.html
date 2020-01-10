@@ -1,0 +1,12 @@
+<div id="announcement">
+  <div class="title">
+    <strong>公告</strong>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="page-num">
+    <ng-container *ngFor="let i of pageNum">
+      <button mat-button [routerLink]="['/announce',i]">{{i+1}}</button>
+    </ng-container>
+  </div>
+</div>
+<app-footer></app-footer>
