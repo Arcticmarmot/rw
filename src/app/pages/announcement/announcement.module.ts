@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AnnouncementRoutingModule } from './announcement-routing.module';
 import { AnnouncementComponent } from './announcement.component';
 import {FooterModule} from '../../share/footer/footer.module';
-import {MatListModule} from '@angular/material';
+import {MatButtonModule, MatListModule} from '@angular/material';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import {MatListModule} from '@angular/material';
     CommonModule,
     AnnouncementRoutingModule,
     FooterModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ]
 })
 export class AnnouncementModule { }

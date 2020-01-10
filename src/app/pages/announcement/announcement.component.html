@@ -4,11 +4,17 @@
   </div>
   <div class="list">
     <mat-list>
-      <div class="item" *ngFor="let sa of shortAnno">
+      <div class="item" *ngFor="let sa of shortAnnos">
         <mat-list-item ><a>{{sa.title}}</a></mat-list-item>
         <mat-divider></mat-divider>
       </div>
     </mat-list>
+  </div>
+  <div class="page-num">
+    <ng-container *ngFor="let i in ">
+      <button mat-button>1</button>
+    </ng-container>
+
   </div>
 </div>
 <app-footer></app-footer>

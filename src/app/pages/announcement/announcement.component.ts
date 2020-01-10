@@ -8,15 +8,17 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./announcement.component.less']
 })
 export class AnnouncementComponent implements OnInit {
-  shortAnno;
+  shortAnnos;
+  pageNum: number;
   constructor(private announcementService: AnnouncementService,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     const page = this.activatedRoute.snapshot.paramMap.get('page');
     this.announcementService.getAnnouncement(page).subscribe(
-      res => {
-        this.shortAnno = res;
+      (res: {shortAnnos: any, pageNum: number}) => {
+        this.shortAnnos = res.shortAnnos;
+        this.pageNum = res.pageNum;
       }
     );
   }
